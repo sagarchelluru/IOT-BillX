@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout · PowerLedger</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="hero subhero">
+      <nav class="nav">
+        <div class="brand-group">
+          <div class="brand">POWERLEDGER</div>
+          <p class="brand-tagline">Mission Control</p>
+        </div>
+        <div class="nav-links">
+          <a href="overview.html">Overview</a>
+          <a href="realtime.html">Real-Time Data</a>
+          <a href="billing.html">Billing</a>
+          <a href="market.html">Energy Market</a>
+          <a href="insights.html">Insights</a>
+          <a href="profile.html">Profile</a>
+          <a href="checkout.html" class="active-link">Checkout</a>
+        </div>
+        <div class="nav-actions">
+          <a href="login.html" class="ghost-btn">Login</a>
+          <button id="connect-wallet" class="primary-btn">Connect Wallet</button>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Finalize Onboarding</p>
+          <h1>Account Details & Settlement Checkout</h1>
+          <p class="lead">
+            Review your profile, pick a tariff, and confirm payment preferences
+            before your meter begins streaming data to the blockchain.
+          </p>
+          <div class="hero-actions">
+            <a href="account.html" class="ghost-btn">Edit Account Info</a>
+            <a href="billing.html" class="primary-btn">View Billing Ledger</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="billing-main">
+      <section class="summary-grid">
+        <article class="panel">
+          <h2>Account Snapshot</h2>
+          <div class="info-grid">
+            <div>
+              <p class="label">Name</p>
+              <p>Sagar Chelluru</p>
+            </div>
+            <div>
+              <p class="label">Meter ID</p>
+              <p>MTR-0913-A</p>
+            </div>
+            <div>
+              <p class="label">Wallet</p>
+              <p>0xB1c3...91DE</p>
+            </div>
+            <div>
+              <p class="label">Location</p>
+              <p>Hyderabad, IN</p>
+            </div>
+          </div>
+          <div class="profile-tags">
+            <span class="tag-pill">Residential</span>
+            <span class="tag-pill">Solar Rooftop</span>
+            <span class="tag-pill">EV Charger</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>Plan Selection</h2>
+          <form class="profile-form">
+            <label>
+              Tariff Tier
+              <select>
+                <option>Dynamic TOU v2.4</option>
+                <option>Flat Residential</option>
+                <option>Green Rewards</option>
+              </select>
+            </label>
+            <label>
+              Billing Cycle
+              <select>
+                <option>Monthly (default)</option>
+                <option>Quarterly</option>
+                <option>Annual</option>
+              </select>
+            </label>
+            <label>
+              Delivery Method
+              <select>
+                <option>USDC Wallet Settlement</option>
+                <option>Bank ACH</option>
+                <option>Manual Invoice</option>
+              </select>
+            </label>
+          </form>
+        </article>
+      </section>
+
+      <section class="summary-grid">
+        <article class="panel checkout-card">
+          <h2>Charges Overview</h2>
+          <ul class="order-list">
+            <li>
+              <span>Meter Provisioning</span>
+              <strong>$25.00</strong>
+            </li>
+            <li>
+              <span>Security Deposit</span>
+              <strong>$50.00</strong>
+            </li>
+            <li>
+              <span>Tariff Activation</span>
+              <strong>$12.50</strong>
+            </li>
+            <li class="total-row">
+              <span>Total Due Today</span>
+              <strong>$87.50</strong>
+            </li>
+          </ul>
+          <p class="muted">
+            Future energy usage will settle automatically each billing cycle based
+            on smart-contract calculations.
+          </p>
+        </article>
+
+        <article class="panel checkout-card">
+          <h2>Payment Details</h2>
+          <form class="profile-form">
+            <label>
+              Cardholder Name
+              <input type="text" placeholder="Sagar Chelluru" required />
+            </label>
+            <div class="input-inline">
+              <label>
+                Card Number
+                <input type="text" placeholder="4242 4242 4242 4242" required />
+              </label>
+              <label>
+                Expiry
+                <input type="text" placeholder="08 / 27" required />
+              </label>
+            </div>
+            <div class="input-inline">
+              <label>
+                CVV
+                <input type="text" placeholder="123" required />
+              </label>
+              <label>
+                ZIP / Postal
+                <input type="text" placeholder="500081" required />
+              </label>
+            </div>
+            <label class="checkbox-row">
+              <input type="checkbox" checked />
+              <span>Save this payment method for future settlements</span>
+            </label>
+            <button class="primary-btn full-width">Complete Checkout</button>
+            <p class="muted account-link">
+              Need assistance?
+              <a href="mailto:support@powerledger.io">Contact support</a>
+            </p>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 PowerLedger Labs · Built on Ethereum & IoT</p>
+      <div class="footer-links">
+        <a href="index.html">Dashboard</a>
+        <a href="mailto:support@powerledger.io">Support</a>
+        <a href="#">Security</a>
+      </div>
+    </footer>
+  </body>
+</html>
+

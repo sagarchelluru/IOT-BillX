@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Decentralized Power Billing</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js"
+      defer
+    ></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="landing-header">
+      <nav class="nav landing-nav">
+        <div class="brand-group">
+          <div class="brand">DECENTRALIZED</div>
+          <p class="brand-tagline">Power Billing</p>
+        </div>
+        <div class="nav-links">
+          <a href="overview.html">Overview</a>
+          <a href="realtime.html">Real-Time Data</a>
+          <a href="billing.html">Billing</a>
+          <a href="market.html">Energy Market</a>
+          <a href="insights.html">Insights</a>
+          <a href="profile.html">Profile</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+        <div class="nav-actions">
+          <a href="login.html" class="ghost-btn">Login</a>
+          <button id="connect-wallet" class="primary-btn">
+            Connect Wallet
+          </button>
+        </div>
+      </nav>
+      <section class="hero-landing">
+        <div class="hero-landing__bg"></div>
+        <div class="hero-landing__content">
+          <p class="eyebrow">Grid Architecture Studio</p>
+          <h1>We Design Your Power Space</h1>
+          <p class="lead">
+            Minimalist, future-forward energy experiences that fuse IoT
+            precision with Ethereum-grade security. From smart metering to
+            transparent billing, we craft the next skyline of decentralized
+            utilities.
+          </p>
+          <div class="hero-actions">
+            <button class="outline-btn">See our projects</button>
+            <button class="ghost-btn">Get in touch</button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="overview" class="panel-grid">
+        <article class="panel">
+          <h2>System Overview</h2>
+          <p>
+            IoT meters stream signed telemetry packets (voltage, current, kWh)
+            to edge gateways. Gateways validate signatures, aggregate usage, and
+            anchor results to the Ethereum blockchain through our billing smart
+            contract. Each settlement event emits immutable usage receipts that
+            consumers, utilities, and auditors can verify instantly.
+          </p>
+          <ul>
+            <li>Cryptographic proofs of consumption</li>
+            <li>Programmable tariffs and incentives</li>
+            <li>Fraud-resistant and transparent billing</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h2>Smart Contract Snapshot</h2>
+          <div class="contract-details">
+            <div>
+              <p class="label">Contract</p>
+              <p>0x92B9...a4F2</p>
+            </div>
+            <div>
+              <p class="label">Network</p>
+              <p>Polygon zkEVM</p>
+            </div>
+            <div>
+              <p class="label">Tariff Hash</p>
+              <p>0x7d1f...91bc</p>
+            </div>
+            <div>
+              <p class="label">Auditor</p>
+              <p>Ernst & Grid</p>
+            </div>
+          </div>
+          <button class="ghost-btn">Explore on Etherscan</button>
+        </article>
+      </section>
+
+      <section id="realtime" class="panel wide">
+        <div class="panel-header">
+          <h2>Real-Time Usage Feed</h2>
+          <span class="status-chip">
+            <span class="pulse"></span>
+            On-chain settlements live
+          </span>
+        </div>
+        <div class="realtime-grid">
+          <div class="chart-card">
+            <canvas id="usage-chart" height="180"></canvas>
+          </div>
+          <div class="stream-card">
+            <h3>Smart Meter Stream</h3>
+            <div id="telemetry-feed" class="telemetry-feed"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tariffs" class="panel-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Dynamic Tariff Simulator</h2>
+            <span class="status-chip">
+              <span class="pulse"></span>
+              AI-assisted pricing
+            </span>
+          </div>
+          <p>
+            Model peak and off-peak energy prices and instantly view projected
+            billing impacts across the fleet. Tariff hashes are anchored on-chain
+            for auditability.
+          </p>
+          <form id="tariff-form" class="tariff-form">
+            <label>
+              Base Rate (USD/kWh)
+              <input
+                type="number"
+                step="0.01"
+                id="base-rate"
+                value="0.14"
+              />
+            </label>
+            <label>
+              Peak Multiplier (×)
+              <input
+                type="number"
+                step="0.05"
+                id="peak-rate"
+                value="1.6"
+              />
+            </label>
+            <label>
+              Off-Peak Multiplier (×)
+              <input
+                type="number"
+                step="0.05"
+                id="offpeak-rate"
+                value="0.85"
+              />
+            </label>
+            <button class="primary-btn" type="submit">Simulate Tariff</button>
+          </form>
+          <div id="tariff-output" class="tariff-output">
+            <div>
+              <p class="label">Peak Window</p>
+              <h3>0.22 USD/kWh</h3>
+              <small>17:00-22:00 local</small>
+            </div>
+            <div>
+              <p class="label">Off-Peak Window</p>
+              <h3>0.12 USD/kWh</h3>
+              <small>00:00-06:00 local</small>
+            </div>
+            <div>
+              <p class="label">Projected Revenue</p>
+              <h3>$48.2K</h3>
+              <small>Next 24h</small>
+            </div>
+          </div>
+        </article>
+        <article class="panel">
+          <h2>Settlement Timeline</h2>
+          <p>
+            On-chain settlements finalize every 15 minutes with validator
+            attestations. Each entry includes transaction hashes for audit.
+          </p>
+          <ul id="settlement-list" class="timeline"></ul>
+        </article>
+      </section>
+
+      <section id="market" class="panel-grid">
+        <article class="panel">
+          <h2>Peer Energy Marketplace</h2>
+          <p>
+            Producers can tokenize surplus energy and auction it to consumers in
+            the microgrid. Smart contracts enforce delivery SLAs while
+            guaranteeing instant settlement in stablecoins.
+          </p>
+          <div class="market-offers" id="market-offers"></div>
+        </article>
+        <article class="panel">
+          <h2>Compliance & Audit</h2>
+          <p>
+            Every billing cycle emits zero-knowledge attestations, enabling
+            auditors to verify totals without accessing raw consumption data.
+          </p>
+          <ul>
+            <li>Immutable audit trail</li>
+            <li>Role-based data visibility</li>
+            <li>Configurable retention policies</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="insights" class="panel-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Operational Alerts</h2>
+            <button class="ghost-btn">Acknowledge All</button>
+          </div>
+          <div id="notification-feed" class="notification-feed"></div>
+        </article>
+        <article class="panel">
+          <h2>Wallet & Collateral</h2>
+          <div class="wallet-card">
+            <div>
+              <p class="label">Treasury Address</p>
+              <p>0xB1c3...91DE</p>
+            </div>
+            <div>
+              <p class="label">Collateral Pool</p>
+              <h3>$2.4M USDC</h3>
+              <small>Runway 41 days</small>
+            </div>
+            <div>
+              <p class="label">Oracle Health</p>
+              <span class="badge ok">Synchronized</span>
+            </div>
+          </div>
+          <button class="primary-btn">Top Up Collateral</button>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 PowerLedger Labs · Built on Ethereum & IoT</p>
+      <div class="footer-links">
+        <a href="#">Docs</a>
+        <a href="#">Status</a>
+        <a href="#">Security</a>
+      </div>
+    </footer>
+  </body>
+</html>
+

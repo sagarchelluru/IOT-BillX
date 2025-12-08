@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing · PowerLedger</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="billing.js" defer></script>
+  </head>
+  <body>
+    <header class="hero subhero">
+      <nav class="nav">
+        <div class="brand-group">
+          <div class="brand">POWERLEDGER</div>
+          <p class="brand-tagline">Mission Control</p>
+        </div>
+        <div class="nav-links">
+          <a href="overview.html">Overview</a>
+          <a href="realtime.html">Real-Time Data</a>
+          <a href="billing.html" class="active-link">Billing</a>
+          <a href="market.html">Energy Market</a>
+          <a href="insights.html">Insights</a>
+          <a href="profile.html">Profile</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+        <div class="nav-actions">
+          <a href="index.html" class="ghost-btn">Dashboard</a>
+          <a href="login.html" class="ghost-btn">Login</a>
+          <button id="billing-connect-wallet" class="primary-btn">
+            Connect Wallet
+          </button>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Automated Settlement</p>
+          <h1>Billing Control Center</h1>
+          <p class="lead">
+            Drill into individual invoices, apply tariff simulations, and export
+            reconciled receipts for downstream ERP systems—all backed by
+            Ethereum settlement proofs.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn">Sync Latest Cycle</button>
+            <button class="ghost-btn">View Smart Contract</button>
+          </div>
+        </div>
+        <div class="stat-grid">
+          <div>
+            <p class="label">Total Usage</p>
+            <h3 id="total-usage">0 kWh</h3>
+            <small>Current billing cycle</small>
+          </div>
+          <div>
+            <p class="label">Average Tariff</p>
+            <h3 id="avg-tariff">$0.00</h3>
+            <small>Weighted across cohorts</small>
+          </div>
+          <div>
+            <p class="label">Pending Amount</p>
+            <h3 id="pending-amount">$0.00</h3>
+            <small>Awaiting on-chain payment</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="billing-main">
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Filters</h2>
+          <button id="export-btn" class="ghost-btn">Export CSV</button>
+        </div>
+        <div class="filter-row">
+          <label>
+            Search
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Consumer, meter, wallet..."
+            />
+          </label>
+          <label>
+            Status
+            <select id="status-filter">
+              <option value="all">All</option>
+              <option value="Settled">Settled</option>
+              <option value="Pending">Pending</option>
+              <option value="Flagged">Flagged</option>
+            </select>
+          </label>
+          <label>
+            Billing Cycle
+            <select id="month-filter">
+              <option value="all">All Cycles</option>
+              <option value="2025-11">Nov 2025</option>
+              <option value="2025-10">Oct 2025</option>
+              <option value="2025-09">Sep 2025</option>
+            </select>
+          </label>
+        </div>
+        <div class="chip-list">
+          <button data-pill="residential" class="pill active">
+            Residential
+          </button>
+          <button data-pill="commercial" class="pill">Commercial</button>
+          <button data-pill="ev" class="pill">EV Hubs</button>
+          <button data-pill="microgrid" class="pill">Microgrids</button>
+        </div>
+      </section>
+
+      <section class="panel-grid two-column">
+        <article class="panel table-panel">
+          <div class="panel-header">
+            <h2>Billing Ledger</h2>
+            <span class="status-chip">
+              <span class="pulse"></span>
+              Synced with contract
+            </span>
+          </div>
+          <div class="table-wrapper">
+            <table class="billing-table">
+              <thead>
+                <tr>
+                  <th>Consumer</th>
+                  <th>Usage (kWh)</th>
+                  <th>Tariff</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="billing-table-body"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel detail-panel">
+          <div class="panel-header">
+            <h2>Invoice Preview</h2>
+            <button class="ghost-btn">Download PDF</button>
+          </div>
+          <div id="invoice-preview" class="invoice-preview">
+            <p class="muted">Select a ledger row to view details.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 PowerLedger Labs · Built on Ethereum & IoT</p>
+      <div class="footer-links">
+        <a href="#">Docs</a>
+        <a href="#">Status</a>
+        <a href="#">Security</a>
+      </div>
+    </footer>
+  </body>
+</html>
+

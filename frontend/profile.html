@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile · PowerLedger</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="hero subhero">
+      <nav class="nav">
+        <div class="brand-group">
+          <div class="brand">DECENTRALIZED</div>
+          <p class="brand-tagline">Power Billing</p>
+        </div>
+        <div class="nav-links">
+          <a href="overview.html">Overview</a>
+          <a href="realtime.html">Real-Time Data</a>
+          <a href="billing.html">Billing</a>
+          <a href="market.html">Energy Market</a>
+          <a href="insights.html">Insights</a>
+          <a href="profile.html" class="active-link">Profile</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+        <div class="nav-actions">
+          <a href="login.html" class="ghost-btn">Login</a>
+          <button id="connect-wallet" class="primary-btn">Connect Wallet</button>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Account Center</p>
+          <h1>Consumer Profile & Identity</h1>
+          <p class="lead">
+            Review your meter credentials, wallet address, and billing
+            preferences. Update contact details so utilities can reach you if
+            anomalies appear.
+          </p>
+          <div class="hero-actions">
+          <a href="mailto:support@powerledger.io" class="ghost-btn"
+            >Raise Support Ticket</a
+          >
+            <a href="billing.html" class="primary-btn">View Billing</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="billing-main">
+      <section class="panel profile-card">
+        <div class="profile-header">
+          <div>
+            <h2>Sagar Chelluru</h2>
+            <p class="muted">Residential prosumer · since 2023</p>
+          </div>
+          <span class="badge ok">Verified</span>
+        </div>
+        <div class="info-grid">
+          <div>
+            <p class="label">Meter ID</p>
+            <p>MTR-0913-A</p>
+          </div>
+          <div>
+            <p class="label">Wallet Address</p>
+            <p>0xB1c3...91DE</p>
+          </div>
+          <div>
+            <p class="label">Service Address</p>
+            <p>42 Gridline Ave, Hyderabad, IN</p>
+          </div>
+          <div>
+            <p class="label">Tariff Plan</p>
+            <p>Dynamic TOU v2.4</p>
+          </div>
+        </div>
+        <div class="profile-tags">
+          <span class="tag-pill">Solar Rooftop</span>
+          <span class="tag-pill">EV Charger</span>
+          <span class="tag-pill">Green Rewards</span>
+        </div>
+      </section>
+
+      <section class="panel-grid">
+        <article class="panel">
+          <h2>Edit Profile</h2>
+          <form class="profile-form">
+            <div class="input-group">
+              <label for="profile-name">Name</label>
+              <input id="profile-name" type="text" value="Sagar Chelluru" />
+            </div>
+            <div class="input-group">
+              <label for="profile-email">Email</label>
+              <input
+                id="profile-email"
+                type="email"
+                value="sagar@gridmail.com"
+              />
+            </div>
+            <div class="input-group">
+              <label for="profile-address">Address</label>
+              <textarea id="profile-address" rows="3">
+42 Gridline Ave, Hyderabad, IN</textarea
+              >
+            </div>
+            <div class="input-inline">
+              <label>
+                Wallet Address
+                <input type="text" value="0xB1c3...91DE" />
+              </label>
+              <label>
+                Preferred Currency
+                <select>
+                  <option selected>USDC</option>
+                  <option>INR</option>
+                  <option>EUR</option>
+                </select>
+              </label>
+            </div>
+            <button class="primary-btn">Save Changes</button>
+          </form>
+        </article>
+        <article class="panel">
+          <h2>Recent Activity</h2>
+          <ul class="timeline">
+            <li class="timeline-row">
+              <div>
+                <span class="tag">Today</span>
+                <strong>Paid invoice #812</strong>
+                <small>$84.12 · 0x2f3...8e1</small>
+              </div>
+            </li>
+            <li class="timeline-row">
+              <div>
+                <span class="tag">Yesterday</span>
+                <strong>Updated tariff preferences</strong>
+                <small>Dynamic TOU v2.4</small>
+              </div>
+            </li>
+            <li class="timeline-row">
+              <div>
+                <span class="tag">2 days ago</span>
+                <strong>Submitted meter reading</strong>
+                <small>Auto verified via IoT gateway</small>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 PowerLedger Labs · Built on Ethereum & IoT</p>
+      <div class="footer-links">
+        <a href="index.html">Dashboard</a>
+        <a href="mailto:support@powerledger.io">Support</a>
+        <a href="#">Security</a>
+      </div>
+    </footer>
+  </body>
+</html>
+

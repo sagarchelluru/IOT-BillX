@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Market · PowerLedger</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="hero subhero">
+      <nav class="nav">
+        <div class="brand-group">
+          <div class="brand">POWERLEDGER</div>
+          <p class="brand-tagline">Mission Control</p>
+        </div>
+        <div class="nav-links">
+          <a href="overview.html">Overview</a>
+          <a href="realtime.html">Real-Time Data</a>
+          <a href="billing.html">Billing</a>
+          <a href="market.html" class="active-link">Energy Market</a>
+          <a href="insights.html">Insights</a>
+          <a href="profile.html">Profile</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+        <div class="nav-actions">
+          <a href="login.html" class="ghost-btn">Login</a>
+          <button id="connect-wallet" class="primary-btn">Connect Wallet</button>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Peer Transactions</p>
+          <h1>Marketplace & Compliance Controls</h1>
+          <p class="lead">
+            Tokenize surplus generation, power P2P auctions, and evidence every
+            MWh trade with audit-grade receipts.
+          </p>
+          <div class="hero-actions">
+            <a href="index.html" class="ghost-btn">Back to Dashboard</a>
+            <button class="primary-btn">Launch Trading Sandbox</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="billing-main">
+      <section class="panel-grid">
+        <article class="panel">
+          <h2>Peer Energy Marketplace</h2>
+          <p>
+            Producers can tokenize surplus energy and auction it to consumers in
+            the microgrid. Smart contracts enforce delivery SLAs while
+            guaranteeing instant settlement in stablecoins.
+          </p>
+          <div class="market-offers" id="market-offers"></div>
+        </article>
+        <article class="panel">
+          <h2>Compliance & Audit</h2>
+          <p>
+            Every billing cycle emits zero-knowledge attestations, enabling
+            auditors to verify totals without accessing raw consumption data.
+          </p>
+          <ul>
+            <li>Immutable audit trail</li>
+            <li>Role-based data visibility</li>
+            <li>Configurable retention policies</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 PowerLedger Labs · Built on Ethereum & IoT</p>
+      <div class="footer-links">
+        <a href="index.html">Dashboard</a>
+        <a href="#">Docs</a>
+        <a href="#">Security</a>
+      </div>
+    </footer>
+  </body>
+</html>
+

@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+backend/node_modules/
+blockchain/node_modules/
+
+# Hardhat build outputs
+blockchain/artifacts/
+blockchain/cache/
+
+# Environment files
+.env
+backend/.env
+blockchain/.env
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
